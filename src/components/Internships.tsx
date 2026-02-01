@@ -1,29 +1,40 @@
-import { Calendar, MapPin, Code, Brain } from 'lucide-react';
+import { Calendar, MapPin, Code, Brain, Rocket, Target } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import CodeSnippet from './CodeSnippet';
 
 const Internships = () => {
-  const vaultCode = `# vault.py
-class CodeVault:
+  const futureCode = `# future_goals.py
+class FutureInternship:
     def __init__(self):
-        self.scripts = 100
-        self.status = "evolving"
+        self.status = "actively_seeking"
+        self.target_roles = [
+            "Software Developer Intern",
+            "Backend Developer Intern",
+            "Java Developer Intern"
+        ]
         
-    def deploy(self):
-        return "AI-powered rapid deployment"
+    def prepare(self):
+        return "Building projects & skills"
+        
+    def apply(self, company):
+        return f"Ready to contribute to {company}"
 
-# Dynamic intelligence hub 🚀`;
+# Open to opportunities! 🚀`;
 
-  const aiAssistantCode = `# ai_assistant.py
-class AIAssistant:
+  const skillsCode = `# current_focus.py
+class CurrentFocus:
     def __init__(self):
-        self.platforms = ["ChatGPT", "Gemini", "PromptHer"]
-        self.mode = "digital_copilot"
+        self.learning = [
+            "Java Backend Development",
+            "Database Management",
+            "API Development"
+        ]
+        self.projects = ["Weather App", "NeuroLearn"]
         
-    def execute(self):
-        return "Think → Plan → Execute"
+    def get_readiness(self):
+        return "Industry-ready skills"
 
-# AI collaboration ✨`;
+# Building foundation 💪`;
 
   return (
     <section id="internships" className="py-20 bg-muted/20 tech-pattern">
@@ -33,43 +44,47 @@ class AIAssistant:
             <span className="gradient-text">Professional Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Building the future through AI and automation
+            Actively seeking internship opportunities
           </p>
         </div>
 
         <div className="space-y-12">
-          {/* Vault of Codes Internship */}
+          {/* Future Internship Goals */}
           <Card className="p-8 bg-gradient-card border-code-border hover:glow transition-all duration-300">
             <div className="grid lg:grid-cols-2 gap-8">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <Code className="text-primary" size={24} />
-                  <h3 className="text-2xl font-bold text-primary">Vault of Codes</h3>
+                  <Rocket className="text-primary" size={24} />
+                  <h3 className="text-2xl font-bold text-primary">Looking for Opportunities</h3>
                 </div>
                 
-                <p className="text-lg font-semibold mb-2">AI and Prompt Engineering Intern</p>
-                
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                  <div className="flex items-center gap-1">
-                    <Calendar size={16} />
-                    <span>July 2025 - Present</span>
-                  </div>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <p className="text-lg font-semibold">Actively Seeking Internships</p>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex gap-3">
                     <span className="text-primary mt-1">●</span>
                     <p className="text-muted-foreground">
-                      Architecting an ever-evolving <span className="text-primary font-semibold">"Code Vault"</span> – 
-                      an AI-powered repository fusing 100+ Python, ML, and automation scripts into a personal coding OS for rapid-fire deployment.
+                      Seeking <span className="text-primary font-semibold">Software Development Internship</span> roles 
+                      where I can apply my Java, SQL, and backend development skills.
                     </p>
                   </div>
                   
                   <div className="flex gap-3">
                     <span className="text-primary mt-1">●</span>
                     <p className="text-muted-foreground">
-                      Continuously pioneering new scripts, positioning this vault as a 
-                      <span className="text-primary font-semibold"> dynamic intelligence hub</span> rather than a static repository.
+                      Ready to contribute to real-world projects while learning from 
+                      <span className="text-primary font-semibold"> industry professionals</span>.
+                    </p>
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <span className="text-primary mt-1">●</span>
+                    <p className="text-muted-foreground">
+                      Available for <span className="text-primary font-semibold">immediate start</span> - 
+                      remote, hybrid, or on-site positions.
                     </p>
                   </div>
                 </div>
@@ -77,29 +92,29 @@ class AIAssistant:
 
               <div>
                 <CodeSnippet 
-                  code={vaultCode}
+                  code={futureCode}
                   language="Python"
-                  title="code_vault.py"
+                  title="future_goals.py"
                 />
               </div>
             </div>
           </Card>
 
-          {/* Mirai School Internship */}
+          {/* Current Preparation */}
           <Card className="p-8 bg-gradient-card border-code-border hover:glow transition-all duration-300">
             <div className="grid lg:grid-cols-2 gap-8">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <Brain className="text-primary" size={24} />
-                  <h3 className="text-2xl font-bold text-primary">Mirai School of Technology</h3>
+                  <Target className="text-primary" size={24} />
+                  <h3 className="text-2xl font-bold text-primary">Current Preparation</h3>
                 </div>
                 
-                <p className="text-lg font-semibold mb-2">Artificial Intelligence Intern</p>
+                <p className="text-lg font-semibold mb-2">Building Industry-Ready Skills</p>
                 
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
                   <div className="flex items-center gap-1">
                     <Calendar size={16} />
-                    <span>June 2025 - Present</span>
+                    <span>Ongoing</span>
                   </div>
                 </div>
 
@@ -107,18 +122,24 @@ class AIAssistant:
                   <div className="flex gap-3">
                     <span className="text-primary mt-1">●</span>
                     <p className="text-muted-foreground">
-                      Gaining hands-on experience with advanced AI platforms including 
-                      <span className="text-primary font-semibold"> ChatGPT, Gemini, PromptHer, and Google Teachable Machine</span> 
-                      to deepen understanding of multi-agent system capabilities.
+                      Completed <span className="text-primary font-semibold">Deloitte Technology Job Simulation</span> – 
+                      gaining practical coding and development experience.
                     </p>
                   </div>
                   
                   <div className="flex gap-3">
                     <span className="text-primary mt-1">●</span>
                     <p className="text-muted-foreground">
-                      Leading prompt engineering and AI architecture, creating a 
-                      <span className="text-primary font-semibold"> futuristic assistant</span> that thinks, plans, 
-                      and executes seamlessly like a digital co-pilot.
+                      Building real-world projects like <span className="text-primary font-semibold">Weather Application</span> and 
+                      <span className="text-primary font-semibold"> NeuroLearn</span> to strengthen my portfolio.
+                    </p>
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <span className="text-primary mt-1">●</span>
+                    <p className="text-muted-foreground">
+                      Earning industry certifications from <span className="text-primary font-semibold">Infosys Springboard, 
+                      Simplilearn, and Scaler</span>.
                     </p>
                   </div>
                 </div>
@@ -126,43 +147,43 @@ class AIAssistant:
 
               <div>
                 <CodeSnippet 
-                  code={aiAssistantCode}
+                  code={skillsCode}
                   language="Python"
-                  title="ai_assistant.py"
+                  title="current_focus.py"
                 />
               </div>
             </div>
           </Card>
         </div>
 
-        {/* Skills Developed */}
+        {/* Target Roles */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center mb-8 gradient-text">
-            Skills Developed Through Experience
+            Target Internship Roles
           </h3>
           
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="p-6 bg-gradient-card border-code-border text-center">
               <Code className="text-primary mx-auto mb-4" size={32} />
-              <h4 className="font-semibold mb-2">AI Architecture</h4>
+              <h4 className="font-semibold mb-2">Software Developer</h4>
               <p className="text-sm text-muted-foreground">
-                Multi-agent systems and prompt engineering
+                Java backend development and API creation
               </p>
             </Card>
             
             <Card className="p-6 bg-gradient-card border-code-border text-center">
               <Brain className="text-primary mx-auto mb-4" size={32} />
-              <h4 className="font-semibold mb-2">Automation</h4>
+              <h4 className="font-semibold mb-2">Backend Developer</h4>
               <p className="text-sm text-muted-foreground">
-                Python scripting and workflow optimization
+                Database management and server-side logic
               </p>
             </Card>
             
             <Card className="p-6 bg-gradient-card border-code-border text-center">
               <MapPin className="text-primary mx-auto mb-4" size={32} />
-              <h4 className="font-semibold mb-2">Product Development</h4>
+              <h4 className="font-semibold mb-2">Full Stack Developer</h4>
               <p className="text-sm text-muted-foreground">
-                Building scalable, user-centric solutions
+                End-to-end application development
               </p>
             </Card>
           </div>
