@@ -10,9 +10,9 @@ const Contact = () => {
   const contactCode = `# contact.py
 class Contact:
     def __init__(self):
-        self.email = "shubkutt23@gmail.com"
-        self.linkedin = "subasri-b-84839236b" 
-        self.github = "Subasri23Hub"
+        self.email = "prashantbhanage717@gmail.com"
+        self.phone = "+91 7058560366"
+        self.location = "Solapur, Maharashtra"
         self.status = "🟢 Available"
     
     def connect(self):
@@ -22,9 +22,14 @@ class Contact:
 
   const opportunities = [
     {
-      title: "Software Engineering Roles",
-      description: "Full-time positions in product development, AI/ML, and backend systems",
+      title: "Software Development Roles",
+      description: "Entry-level positions in Java backend development, API creation, and application development",
       icon: "💼"
+    },
+    {
+      title: "Internship Opportunities",
+      description: "Seeking hands-on experience in software development and backend engineering",
+      icon: "🎯"
     },
     {
       title: "Project Collaborations",
@@ -32,14 +37,9 @@ class Contact:
       icon: "🤝"
     },
     {
-      title: "Technical Consulting",
-      description: "AI implementation, automation solutions, and system architecture",
-      icon: "💡"
-    },
-    {
-      title: "Mentoring & Speaking",
-      description: "Knowledge sharing in AI, software development, and career guidance",
-      icon: "🎤"
+      title: "Learning & Growth",
+      description: "Opportunities to learn from industry professionals and grow my skills",
+      icon: "📚"
     }
   ];
 
@@ -47,7 +47,7 @@ class Contact:
     {
       icon: Mail,
       title: "Email",
-      value: "shubkutt23@gmail.com",
+      value: "prashantbhanage717@gmail.com",
       description: "Best for detailed discussions and formal inquiries",
       action: () => setIsFormOpen(true),
       color: "text-primary"
@@ -55,17 +55,17 @@ class Contact:
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "subasri-b-84839236b",
+      value: "prashant-bhanage",
       description: "Professional networking and career opportunities",
-      action: () => window.open('https://linkedin.com/in/subasri-b-84839236b', '_blank'),
+      action: () => window.open('https://linkedin.com/in/prashant-bhanage', '_blank'),
       color: "text-copper"
     },
     {
       icon: Github,
       title: "GitHub",
-      value: "Subasri23Hub",
+      value: "prashant-bhanage",
       description: "Code collaboration and project discussions",
-      action: () => window.open('https://github.com/Subasri23Hub', '_blank'),
+      action: () => window.open('https://github.com/prashant-bhanage', '_blank'),
       color: "text-gold"
     }
   ];
@@ -104,23 +104,23 @@ class Contact:
                 <span className="text-primary font-semibold">Open to IT Opportunities</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                Actively seeking roles in software engineering, AI/ML, and product development. 
+                Final year BCA student actively seeking entry-level roles in software development. 
                 Available for immediate start and remote/hybrid positions.
               </p>
             </Card>
 
             <Card className="p-6 bg-gradient-card border-code-border">
               <h3 className="text-xl font-bold mb-4 gradient-text">
-                Response Time
+                Contact Details
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Calendar size={16} className="text-primary" />
-                  <span className="text-sm">Email: Within 12 hours</span>
+                  <span className="text-sm">Phone: +91 7058560366</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin size={16} className="text-primary" />
-                  <span className="text-sm">Location: India (Remote/Hybrid available)</span>
+                  <span className="text-sm">Location: Solapur, Maharashtra, India</span>
                 </div>
               </div>
             </Card>
@@ -183,7 +183,7 @@ class Contact:
             Let's Build Something Amazing Together
           </h3>
           <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl mx-auto">
-            Whether you're looking for a dedicated software engineer, need AI/ML expertise, 
+            Whether you're looking for a dedicated software developer, need help with Java backend development, 
             or want to collaborate on innovative projects, I'm excited to contribute to your team's success.
           </p>
           
@@ -197,7 +197,7 @@ class Contact:
             </Button>
             
             <Button 
-              onClick={() => window.open('https://linkedin.com/in/subasri-b-84839236b', '_blank')}
+              onClick={() => window.open('https://linkedin.com/in/prashant-bhanage', '_blank')}
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >

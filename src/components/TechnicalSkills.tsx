@@ -1,4 +1,4 @@
-import { Code, Database, Globe, Wrench, BarChart3, Users } from 'lucide-react';
+import { Code, Database, Globe, Wrench, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import CodeSnippet from './CodeSnippet';
 
@@ -6,83 +6,85 @@ const TechnicalSkills = () => {
   const skillsCode = `# skills.py
 class TechStack:
     def __init__(self):
-        self.languages = ["Java", "Python", "C++"]
-        self.web = ["HTML", "CSS", "Git"]
-        self.tools = ["VS Code", "MATLAB", "Figma"]
+        self.languages = ["Java"]
+        self.backend = ["Java HttpServer", "Localhost APIs"]
+        self.database = ["MySQL", "SQL", "DBMS"]
+        self.frontend = ["HTML", "CSS", "JavaScript"]
         
     def get_proficiency(self, skill):
-        levels = {"Python": "Advanced", "Java": "Advanced"}
+        levels = {"Java": "Advanced", "MySQL": "Advanced"}
         return levels.get(skill, "Intermediate")
 
 # Full-stack capabilities 💻`;
 
-  const managerialCode = `# leadership.py
-class Leadership:
+  const professionalCode = `# professional_skills.py
+class ProfessionalSkills:
     def __init__(self):
-        self.skills = ["Team coordination", "Vision setting", 
-                      "Conflict resolution", "Time management"]
+        self.skills = [
+            "Effective collaboration",
+            "Clear communication", 
+            "Problem-solving mindset",
+            "Alternative solution thinking"
+        ]
         
-    def lead_project(self, team_size):
-        return f"Leading {team_size} member team"
-        
-    def resolve_conflict(self):
-        return "Find common ground & communicate"
+    def apply_to_project(self, project):
+        return f"Contributing to {project} success"
 
-# Strategic leadership 🎯`;
+# Team player 🤝`;
 
   const technicalCategories = [
     {
       icon: Code,
       title: "Programming",
-      skills: ["Java", "Python", "C++", "Data Structures & Algorithms", "Functional Programming"],
+      skills: ["Java"],
       color: "text-primary"
     },
     {
-      icon: Globe,
-      title: "Web Development",
-      skills: ["HTML", "CSS", "Git", "GitHub"],
+      icon: Wrench,
+      title: "Backend Development",
+      skills: ["Java HttpServer", "Localhost APIs", "HTTP", "Backend Logic"],
       color: "text-bronze"
     },
     {
       icon: Database,
       title: "Database",
-      skills: ["MySQL", "SQL"],
+      skills: ["MySQL", "SQL", "DBMS"],
       color: "text-copper"
     },
     {
-      icon: BarChart3,
-      title: "UI/UX Tools",
-      skills: ["Figma", "Adobe XD", "Canva"],
+      icon: Globe,
+      title: "Frontend Basics",
+      skills: ["HTML", "CSS", "JavaScript"],
       color: "text-gold"
     },
     {
       icon: Wrench,
-      title: "Software & Tools",
-      skills: ["VS Code", "MATLAB", "Quartus", "Grafana", "AutoCAD"],
+      title: "Tools & Platforms",
+      skills: ["Linux", "Git", "GitHub"],
       color: "text-primary"
     }
   ];
 
-  const managerialCategories = [
+  const professionalCategories = [
     {
       icon: Users,
-      title: "Leadership",
-      description: "Team coordination, vision setting, and strategic decision making"
+      title: "Collaboration",
+      description: "Effective teamwork on academic projects like Weather Application and NeuroLearn"
     },
     {
       icon: Users,
-      title: "Conflict Resolution", 
-      description: "Active listening, mediation, and emotional intelligence"
+      title: "Problem Solving", 
+      description: "Discussed and implemented alternative solutions to improve application flow"
+    },
+    {
+      icon: Users,
+      title: "Communication",
+      description: "Communicated project requirements clearly during planning and development"
     },
     {
       icon: Users,
       title: "Adaptability",
-      description: "Change management, learning agility, and innovation mindset"
-    },
-    {
-      icon: Users,
-      title: "Time Management",
-      description: "Goal setting, priority planning, and resource optimization"
+      description: "Quick learner with passion for continuous improvement and new technologies"
     }
   ];
 
@@ -94,7 +96,7 @@ class Leadership:
             <span className="gradient-text">Technical Expertise</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Comprehensive skill set for modern software development
+            Comprehensive skill set for software development
           </p>
         </div>
 
@@ -109,13 +111,13 @@ class Leadership:
             />
           </div>
 
-          {/* Managerial Skills Code */}
+          {/* Professional Skills Code */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 gradient-text">Managerial Skills Framework</h3>
+            <h3 className="text-2xl font-bold mb-6 gradient-text">Professional Skills Framework</h3>
             <CodeSnippet 
-              code={managerialCode}
+              code={professionalCode}
               language="Python"
-              title="managerial_skills.py"
+              title="professional_skills.py"
             />
           </div>
         </div>
@@ -147,14 +149,14 @@ class Leadership:
           </div>
         </div>
 
-        {/* Managerial Skills */}
+        {/* Professional Skills */}
         <div>
           <h3 className="text-2xl font-bold text-center mb-8 gradient-text">
-            Leadership & Management Skills
+            Professional Skills
           </h3>
           
           <div className="grid md:grid-cols-2 gap-6">
-            {managerialCategories.map((category, index) => (
+            {professionalCategories.map((category, index) => (
               <Card key={index} className="p-6 bg-gradient-card border-code-border hover:glow transition-all duration-300">
                 <div className="flex items-center gap-3 mb-4">
                   <category.icon className="text-primary" size={24} />
@@ -167,45 +169,6 @@ class Leadership:
               </Card>
             ))}
           </div>
-        </div>
-
-        {/* Additional Tools */}
-        <div className="mt-16">
-          <Card className="p-8 bg-gradient-card border-code-border">
-            <h3 className="text-xl font-bold mb-6 text-center gradient-text">
-              Digital Productivity & Visualization Tools
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-semibold mb-3 text-primary">Productivity Suite</h4>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full"></span>
-                    <span className="text-sm text-muted-foreground">Microsoft Excel - Advanced formulas & data analysis</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full"></span>
-                    <span className="text-sm text-muted-foreground">Microsoft PowerPoint - Professional presentations</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <h4 className="font-semibold mb-3 text-primary">Development Environment</h4>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full"></span>
-                    <span className="text-sm text-muted-foreground">VS Code - Primary development environment</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full"></span>
-                    <span className="text-sm text-muted-foreground">MATLAB - Technical computing & modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card>
         </div>
       </div>
     </section>

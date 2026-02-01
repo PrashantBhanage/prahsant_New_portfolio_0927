@@ -1,97 +1,78 @@
-import { Zap, Eye, Gamepad2, Calendar } from 'lucide-react';
+import { Cloud, BookOpen, Calendar } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import CodeSnippet from './CodeSnippet';
 
 const Projects = () => {
-  const energyMeterCode = `# energy_ocr.py
-import cv2
-import matlab.engine
+  const weatherAppCode = `# weather_app.py
+from http.server import HTTPServer
+import mysql.connector
+import requests
 
-class EnergyOCR:
+class WeatherApplication:
     def __init__(self):
-        self.accuracy = 0.92
-        self.engine = matlab.engine.start_matlab()
+        self.api = "LiveWeatherAPI"
+        self.db = mysql.connector.connect()
         
-    def process(self, image):
-        return self.engine.extractDigits(image)
+    def get_weather(self, city):
+        response = requests.get(f"{self.api}/{city}")
+        self.save_to_db(response.json())
+        return response.json()
+        
+    def save_to_db(self, data):
+        cursor = self.db.cursor()
+        cursor.execute("INSERT INTO weather...")
 
-# 92% accuracy achieved 🔋`;
+# Real-time weather data 🌤️`;
 
-  const aslCode = `# asl_detector.py
-import tensorflow as tf
-import cv2
+  const neuroLearnCode = `# neurolearn.py
+from http.server import HTTPServer
+import mysql.connector
 
-class ASLDetector:
+class NeuroLearn:
     def __init__(self):
-        self.model = self.build_cnn()
+        self.db = mysql.connector.connect()
+        self.tts_enabled = True
         
-    def build_cnn(self):
-        return tf.keras.Sequential([
-            tf.keras.layers.Conv2D(32, 3, activation='relu'),
-            tf.keras.layers.Dense(26, activation='softmax')
-        ])
-
-# Real-time ASL detection 👋`;
-
-  const gameNLPCode = `# game_ai.py
-from transformers import GPT2LMHeadModel
-import random
-
-class GameAI:
-    def __init__(self):
-        self.model = GPT2LMHeadModel.from_pretrained('gpt2')
-        self.quest_types = ["fetch", "combat", "exploration"]
+    def get_lesson(self, topic):
+        cursor = self.db.cursor()
+        return cursor.execute(f"SELECT * FROM lessons WHERE topic='{topic}'")
         
-    def generate_content(self, context):
-        return "Dynamic narrative created"
+    def text_to_speech(self, text):
+        # JavaScript TTS integration
+        return "Speech output enabled"
 
-# Game content generation 🎮`;
+# Interactive learning 📚`;
 
   const projects = [
     {
-      icon: Zap,
-      title: "Automated Energy Meter Reading",
-      subtitle: "Image Processing & IoT",
-      date: "May 2025",
-      description: "Built a scalable, cloud-integrated energy monitoring solution with 92% accuracy using MATLAB OCR pipeline and ThingSpeak integration.",
+      icon: Cloud,
+      title: "Weather Application",
+      subtitle: "Java Backend & API Integration",
+      date: "2024",
+      description: "Developed a real-time weather forecasting system using Java HttpServer and LiveWeatherAPI with MySQL database integration for data persistence.",
       highlights: [
-        "92% digit recognition accuracy with advanced preprocessing",
-        "Cloud-integrated real-time reporting system", 
-        "Zero microcontroller dependency architecture",
-        "Intuitive user-friendly data extraction"
+        "Real-time weather data using LiveWeatherAPI",
+        "Java HttpServer backend for request handling", 
+        "Frontend interface with HTML & CSS",
+        "MySQL database for storing application data"
       ],
-      code: energyMeterCode,
-      tech: ["MATLAB", "ThingSpeak", "Image Processing", "OCR", "IoT"]
+      code: weatherAppCode,
+      tech: ["Java", "Java HttpServer", "LiveWeatherAPI", "HTML", "CSS", "MySQL"]
     },
     {
-      icon: Eye,
-      title: "American Sign Language Detection",
-      subtitle: "CNN & Computer Vision",
-      date: "January 2025",
-      description: "Developed a CNN-based real-time ASL gesture recognition system using OpenCV for assistive communication technology.",
+      icon: BookOpen,
+      title: "NeuroLearn",
+      subtitle: "Educational Learning Platform",
+      date: "2024",
+      description: "Built an educational learning platform using Java backend with HttpServer, featuring interactive frontend and Text-to-Speech functionality.",
       highlights: [
-        "Convolutional Neural Network for spatial feature extraction",
-        "Real-time detection with OpenCV integration",
-        "Dropout and batch normalization for accuracy",
-        "Cross-entropy loss with Adam optimizer"
+        "Java backend with HttpServer architecture",
+        "Interactive frontend using HTML, CSS, JavaScript",
+        "Voice Text-to-Speech functionality",
+        "MySQL database for structured content storage"
       ],
-      code: aslCode,
-      tech: ["Python", "TensorFlow", "OpenCV", "CNN", "Computer Vision"]
-    },
-    {
-      icon: Gamepad2,
-      title: "Procedural Game Content Creation",
-      subtitle: "NLP & AI Generation",
-      date: "October 2024",
-      description: "Created a generative AI system for dynamic game narratives, dialogues, and quests using advanced NLP techniques.",
-      highlights: [
-        "Custom text generation model for game content",
-        "Context-aware narrative and dialogue creation",
-        "Automated storyline and mission generation",
-        "Grammar consistency and plot continuity systems"
-      ],
-      code: gameNLPCode,
-      tech: ["Python", "NLP", "GPT-2", "Transformers", "PyTorch"]
+      code: neuroLearnCode,
+      tech: ["Java", "Java HttpServer", "MySQL", "HTML", "CSS", "JavaScript"]
     }
   ];
 
@@ -132,7 +113,7 @@ class GameAI:
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-3 text-primary">Key Achievements</h4>
+                    <h4 className="font-semibold mb-3 text-primary">Key Features</h4>
                     <div className="space-y-2">
                       {project.highlights.map((highlight, hIndex) => (
                         <div key={hIndex} className="flex gap-3">

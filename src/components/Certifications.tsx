@@ -1,115 +1,102 @@
-import { Award, ExternalLink, Code, Database, Brain, Cloud } from 'lucide-react';
+import { Award, ExternalLink, Code, Database, Brain, Briefcase } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import CodeSnippet from './CodeSnippet';
 
 // Import certification images
-import simplilearnLogo from '@/assets/simplilearn-logo.png';
-import frontendCert from '@/assets/frontend-cert.png';
-import gdgLogo from '@/assets/gdg-logo.png';
-import sqlCert from '@/assets/sql-cert.jpg';
-import infosysLogo from '@/assets/infosys-logo.png';
+import infosysCert from '@/assets/infosys-cert.png';
 import aiCert from '@/assets/ai-cert.png';
-import devopsCert from '@/assets/devops-cert.png';
+import deloitteCert from '@/assets/deloitte-cert.png';
 
 const Certifications = () => {
   const certificationCode = `class ProfessionalCertifications:
     def __init__(self):
         self.certifications = {
-            'frontend_development': {
-                'provider': 'Simplilearn SkillUp',
-                'technologies': ['HTML', 'CSS', 'JavaScript', 'React.js', 'Angular'],
-                'focus': 'Responsive UI Development',
-                'skills_gained': ['Component Architecture', 'State Management', 'Modern CSS']
+            'deloitte_simulation': {
+                'provider': 'Deloitte via Forage',
+                'focus': 'Coding & Development',
+                'date': 'December 2025',
+                'skills_gained': ['Software Development', 'Problem Solving']
             },
             
-            'sql_analytics': {
-                'provider': 'Google Developers Group',
-                'technologies': ['SQL', 'Data Analysis', 'Query Optimization'],
-                'focus': 'Database Management & Analytics',
-                'skills_gained': ['Complex Queries', 'Joins', 'Aggregations', 'Performance Tuning']
+            'java_fundamentals': {
+                'provider': 'Infosys Springboard',
+                'focus': 'Java Programming',
+                'date': 'August 2025',
+                'skills_gained': ['Java Basics', 'OOP Concepts']
+            },
+            
+            'sql_database': {
+                'provider': 'Scaler',
+                'focus': 'SQL & Database Design',
+                'date': 'August 2025',
+                'skills_gained': ['SQL Queries', 'MySQL', 'Database Design']
             },
             
             'artificial_intelligence': {
-                'provider': 'Infosys SpringBoard',
-                'technologies': ['Machine Learning', 'NLP', 'Neural Networks'],
-                'focus': 'AI Ethics & Implementation',
-                'skills_gained': ['Supervised Learning', 'Model Training', 'AI Ethics']
-            },
-            
-            'devops_fundamentals': {
                 'provider': 'Simplilearn SkillUp',
-                'technologies': ['Docker', 'Jenkins', 'Git', 'CI/CD'],
-                'focus': 'Automation & Deployment',
-                'skills_gained': ['Pipeline Creation', 'Containerization', 'Version Control']
+                'focus': 'Introduction to AI',
+                'date': 'August 2025',
+                'skills_gained': ['AI Concepts', 'Machine Learning Basics']
             }
         }
         
-    def get_certification_impact(self, cert_name):
-        cert = self.certifications[cert_name]
-        return f"Enhanced expertise in {cert['focus']} with {len(cert['technologies'])} technologies"
-        
-    def apply_skills(self, project_type):
-        relevant_certs = []
-        for cert_name, cert_data in self.certifications.items():
-            if any(tech in cert_data['technologies'] for tech in ['React.js', 'SQL', 'Machine Learning']):
-                relevant_certs.append(cert_name)
-        return relevant_certs
+    def get_certification_count(self):
+        return len(self.certifications)
 
 # Continuous professional development
 certs = ProfessionalCertifications()
-print("📜 Industry-recognized expertise validated!")`;
+print("📜 4 Industry-recognized certifications earned!")`;
 
   const certifications = [
     {
-      icon: Code,
-      title: "Front-End Development",
-      provider: "Simplilearn SkillUp",
-      logo: simplilearnLogo,
-      certificate: frontendCert,
-      description: "Built responsive UIs using HTML, CSS, JavaScript, React.js, and Angular.",
-      skills: ["Responsive Design", "Component Architecture", "Modern JavaScript", "React.js", "Angular"],
+      icon: Briefcase,
+      title: "Deloitte Technology Job Simulation",
+      provider: "Deloitte via Forage",
+      date: "December 2025",
+      certificate: deloitteCert,
+      description: "Completed practical tasks in Coding & Development as part of Deloitte's technology job simulation program.",
+      skills: ["Software Development", "Coding", "Problem Solving", "Professional Skills"],
       color: "text-primary"
     },
     {
-      icon: Database,
-      title: "SQL for Analysts",
-      provider: "Google Developers Group", 
-      logo: gdgLogo,
-      certificate: sqlCert,
-      description: "Practiced SQL queries, joins, aggregations, and data analysis.",
-      skills: ["Complex Queries", "Database Optimization", "Data Analysis", "Joins & Aggregations"],
+      icon: Code,
+      title: "Java Programming Fundamentals",
+      provider: "Infosys Springboard",
+      date: "August 2025",
+      certificate: infosysCert,
+      description: "Mastered Java programming fundamentals including OOP concepts, data structures, and core Java development.",
+      skills: ["Java", "OOP", "Data Structures", "Core Java"],
       color: "text-bronze"
     },
     {
-      icon: Brain,
-      title: "Introduction to AI",
-      provider: "Infosys SpringBoard",
-      logo: infosysLogo,
-      certificate: aiCert,
-      description: "Applied supervised learning, NLP, ethical AI concepts through hands-on tasks.",
-      skills: ["Machine Learning", "NLP", "AI Ethics", "Supervised Learning", "Neural Networks"],
+      icon: Database,
+      title: "SQL for Beginners",
+      provider: "Scaler",
+      date: "August 2025",
+      certificate: null,
+      description: "Learned SQL using MySQL and Database Design, covering queries, joins, and database management.",
+      skills: ["SQL", "MySQL", "Database Design", "Query Optimization"],
       color: "text-copper"
     },
     {
-      icon: Cloud,
-      title: "Introduction to DevOps Tools",
+      icon: Brain,
+      title: "Introduction to Artificial Intelligence",
       provider: "Simplilearn SkillUp",
-      logo: simplilearnLogo,
-      certificate: devopsCert,
-      description: "Mastered DevOps fundamentals including CI/CD, containerization, and automation.",
-      skills: ["CI/CD Pipelines", "Docker", "Jenkins", "Git", "Automation"],
+      date: "August 2025",
+      certificate: aiCert,
+      description: "Gained foundational knowledge in AI concepts, machine learning basics, and AI applications.",
+      skills: ["AI Concepts", "Machine Learning", "AI Applications", "Data Science Basics"],
       color: "text-gold"
     }
   ];
 
-  const openCredential = (certificateUrl: string) => {
-    // Always open in new tab, compatible with all browsers
+  const openCredential = (certificateUrl: string | null) => {
+    if (!certificateUrl) return;
+    
     const newWindow = window.open(certificateUrl, '_blank', 'noopener,noreferrer');
     
-    // Fallback for browsers that block popups
     if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-      // Create a temporary anchor element as fallback
       const link = document.createElement('a');
       link.href = certificateUrl;
       link.target = '_blank';
@@ -154,17 +141,14 @@ print("📜 Industry-recognized expertise validated!")`;
               {/* Certificate Header */}
               <div className="p-6 border-b border-code-border bg-muted/20">
                 <div className="flex items-center gap-4 mb-4">
-                  <img 
-                    src={cert.logo} 
-                    alt={`${cert.provider} logo`}
-                    className="w-12 h-12 object-contain rounded-lg bg-background p-2 border border-border"
-                  />
+                  <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-background border border-border">
+                    <cert.icon className={`${cert.color}`} size={24} />
+                  </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <cert.icon className={`${cert.color}`} size={20} />
                       <h3 className="font-bold text-lg">{cert.title}</h3>
                     </div>
-                    <p className="text-sm text-muted-foreground">{cert.provider}</p>
+                    <p className="text-sm text-muted-foreground">{cert.provider} • {cert.date}</p>
                   </div>
                   <Award className="text-primary" size={24} />
                 </div>
@@ -173,22 +157,24 @@ print("📜 Industry-recognized expertise validated!")`;
               {/* Certificate Content */}
               <div className="p-6 space-y-6">
                 {/* Certificate Image */}
-                <div className="relative group">
-                  <img 
-                    src={cert.certificate}
-                    alt={`${cert.title} certificate`}
-                    className="w-full h-48 object-cover rounded-lg border border-code-border"
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                    <Button 
-                      onClick={() => openCredential(cert.certificate)}
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                    >
-                      <ExternalLink size={16} className="mr-2" />
-                      View Credential
-                    </Button>
+                {cert.certificate && (
+                  <div className="relative group">
+                    <img 
+                      src={cert.certificate}
+                      alt={`${cert.title} certificate`}
+                      className="w-full h-48 object-cover rounded-lg border border-code-border"
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                      <Button 
+                        onClick={() => openCredential(cert.certificate)}
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                      >
+                        <ExternalLink size={16} className="mr-2" />
+                        View Credential
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Description */}
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -211,13 +197,15 @@ print("📜 Industry-recognized expertise validated!")`;
                 </div>
 
                 {/* View Credential Button */}
-                <Button 
-                  onClick={() => openCredential(cert.certificate)}
-                  className="w-full bg-gradient-accent hover:opacity-90 text-primary-foreground border-0"
-                >
-                  <ExternalLink size={16} className="mr-2" />
-                  View Credential
-                </Button>
+                {cert.certificate && (
+                  <Button 
+                    onClick={() => openCredential(cert.certificate)}
+                    className="w-full bg-gradient-accent hover:opacity-90 text-primary-foreground border-0"
+                  >
+                    <ExternalLink size={16} className="mr-2" />
+                    View Credential
+                  </Button>
+                )}
               </div>
             </Card>
           ))}
@@ -235,9 +223,9 @@ print("📜 Industry-recognized expertise validated!")`;
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Code className="text-primary" size={24} />
                 </div>
-                <h4 className="font-semibold mb-2">Technical Proficiency</h4>
+                <h4 className="font-semibold mb-2">Java Development</h4>
                 <p className="text-sm text-muted-foreground">
-                  Validated expertise across multiple technology stacks
+                  Strong foundation in Java programming
                 </p>
               </div>
               
@@ -245,9 +233,9 @@ print("📜 Industry-recognized expertise validated!")`;
                 <div className="w-16 h-16 bg-bronze/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Database className="text-bronze" size={24} />
                 </div>
-                <h4 className="font-semibold mb-2">Data Management</h4>
+                <h4 className="font-semibold mb-2">Database Skills</h4>
                 <p className="text-sm text-muted-foreground">
-                  Advanced SQL skills for complex data analysis
+                  SQL and MySQL database management
                 </p>
               </div>
               
@@ -255,19 +243,19 @@ print("📜 Industry-recognized expertise validated!")`;
                 <div className="w-16 h-16 bg-copper/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Brain className="text-copper" size={24} />
                 </div>
-                <h4 className="font-semibold mb-2">AI Innovation</h4>
+                <h4 className="font-semibold mb-2">AI Knowledge</h4>
                 <p className="text-sm text-muted-foreground">
-                  Machine learning and ethical AI implementation
+                  Understanding of AI and ML concepts
                 </p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Cloud className="text-gold" size={24} />
+                  <Briefcase className="text-gold" size={24} />
                 </div>
-                <h4 className="font-semibold mb-2">Cloud & DevOps</h4>
+                <h4 className="font-semibold mb-2">Industry Ready</h4>
                 <p className="text-sm text-muted-foreground">
-                  Modern deployment and automation practices
+                  Practical job simulation experience
                 </p>
               </div>
             </div>

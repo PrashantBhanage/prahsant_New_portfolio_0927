@@ -9,27 +9,27 @@ const About = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const aboutCode = `class SoftwareEngineer:
     def __init__(self):
-        self.name = "Subasri B"
-        self.role = "Aspiring Software Engineer"
-        self.university = "SASTRA University"
-        self.degree = "B.Tech Graduate"
-        self.skills = ["Python", "Java", "AI", "Cloud Technologies"]
+        self.name = "Prashant Bhanage"
+        self.role = "Aspiring Software Developer"
+        self.university = "Solapur University"
+        self.degree = "BCA Student (Final Year)"
+        self.skills = ["Java", "SQL", "MySQL", "Backend Development"]
         self.passion = "Building scalable, user-centric solutions"
         
     def get_objective(self):
         return """
-        Product Engineer passionate about integrating AI, 
-        software development, and product design to create 
-        seamless digital experiences that drive business 
-        impact and enhance user satisfaction.
+        Tech-savvy BCA student with strong foundational 
+        knowledge in Java, SQL, DBMS, and backend development.
+        Passionate about continuous learning, problem-solving, 
+        and building scalable applications.
         """
         
     def collaborate(self, team):
         return f"Ready to work with {team} to transform innovative ideas into successful products"
 
 # Initialize engineer
-subasri = SoftwareEngineer()
-print(subasri.get_objective())`;
+prashant = SoftwareEngineer()
+print(prashant.get_objective())`;
 
   return (
     <section id="about" className="min-h-screen flex items-center py-20">
@@ -41,25 +41,25 @@ print(subasri.get_objective())`;
               <div className="mb-6">
                 <img
                   src={profilePhoto}
-                  alt="Subasri B"
+                  alt="Prashant Bhanage"
                   className="w-32 h-32 rounded-full mx-auto lg:mx-0 border-4 border-primary glow object-cover"
                 />
               </div>
               
               <h1 className="text-4xl lg:text-6xl font-bold mb-4">
-                <span className="gradient-text">Subasri B</span>
+                <span className="gradient-text">Prashant Bhanage</span>
               </h1>
               
               <p className="text-xl text-primary mb-4">
-                Aspiring Software Engineer
+                Aspiring Software Developer
               </p>
               
               <p className="text-lg text-muted-foreground mb-6">
-                B.Tech Graduate – SASTRA University
+                BCA Final Year – Solapur University
               </p>
               
               <p className="text-base text-muted-foreground mb-8 leading-relaxed">
-                Skilled in Python, Java, AI, and Cloud Technologies | Open to IT Opportunities
+                Skilled in Java, SQL, MySQL, and Backend Development | Open to IT Opportunities
               </p>
 
               {/* Contact Links */}
@@ -74,7 +74,7 @@ print(subasri.get_objective())`;
                 
                 
                 <a
-                  href="https://linkedin.com/in/subasri-b-84839236b"
+                  href="https://linkedin.com/in/prashant-bhanage"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 bg-muted rounded-lg hover:bg-accent transition-colors"
@@ -84,7 +84,7 @@ print(subasri.get_objective())`;
                 </a>
                 
                 <a
-                  href="https://github.com/Subasri23Hub"
+                  href="https://github.com/prashant-bhanage"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 bg-muted rounded-lg hover:bg-accent transition-colors"
