@@ -74,7 +74,7 @@ print(prashant.get_objective())`;
                 
                 
                 <a
-                  href="https://linkedin.com/in/prashant-bhanage"
+                  href="https://www.linkedin.com/in/imprashantbhanage"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 bg-muted rounded-lg hover:bg-accent transition-colors"
@@ -84,7 +84,7 @@ print(prashant.get_objective())`;
                 </a>
                 
                 <a
-                  href="https://github.com/prashant-bhanage"
+                  href="https://github.com/PrashantBhanage"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 bg-muted rounded-lg hover:bg-accent transition-colors"
